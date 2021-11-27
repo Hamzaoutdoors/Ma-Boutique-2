@@ -20,7 +20,7 @@ const Arrow = styled.div`
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 0;
+    top: -180px;
     bottom: 0;
     left: ${(props) => props.direction === 'left' && '10px'};
     right: ${(props) => props.direction === 'right' && '10px'};
@@ -39,7 +39,7 @@ const Wrapper = styled.div`
 
 const Slide = styled.div`
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     display: flex;
     align-items: center;
     background-color: #${(props) => props.bg};
@@ -48,10 +48,12 @@ const Slide = styled.div`
 const ImgContainer = styled.div`
     height: 100%;
     flex: 1;
+    margin-left: 100px;
+    padding: 10px 0;
 `;
 
 const Image = styled.img`
-   height: 80%;
+   height: 100%;
    padding-left: 10px;
 `;
 
@@ -76,6 +78,7 @@ const Button = styled.button`
    padding: 10px;
    font-size: 20px;
    background-color: transparent;
+   border-radius: 5px;
    cursor: pointer;
 `;
 
@@ -99,10 +102,10 @@ const Slider = () => {
             <ImgContainer>
               <Image src={item.img} alt={item.title} />
             </ImgContainer>
-            <InfoContainer>
+            <InfoContainer style={{ color: item.textColor }}>
               <Title>{item.title}</Title>
               <Desc>{item.desc}</Desc>
-              <Button>SHOW NOW</Button>
+              <Button style={{ color: item.textColor, border: ` solid 1px ${item.textColor}` }}>SHOW NOW</Button>
             </InfoContainer>
           </Slide>
         ))}

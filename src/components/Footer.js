@@ -41,6 +41,7 @@ const SocialIcon = styled.div`
 const Center = styled.div`
    flex: 1;
    padding: 20px;
+   margin-left: 40px;
 `;
 
 const Title = styled.h3`
@@ -53,6 +54,7 @@ const List = styled.ul`
     list-style: none;
     display: flex;
     flex-wrap: wrap;
+    text-align: justify;
 `;
 
 const ListItem = styled.li`

@@ -3,10 +3,11 @@
 export const sliderItems = [
   {
     id: 1,
-    img: './assets/slider/First_image.png',
-    title: 'SUMMER SALE',
+    img: './assets/slider/fourth_image.png',
+    title: 'LOUNGEWEAR SALE',
     desc: 'DON\'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS',
-    bg: 'f5fafd',
+    bg: '1b191a',
+    textColor: '#fff',
   },
   {
     id: 2,
@@ -14,13 +15,15 @@ export const sliderItems = [
     title: 'AUTUMN COLLECTION',
     desc: 'DON\'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS',
     bg: 'fcf1ed',
+    textColor: '#000',
   },
   {
     id: 3,
     img: './assets/slider/third_image.png',
-    title: 'LOUNGEWEAR LOVE',
+    title: 'WINTER LOVE',
     desc: 'DON\'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS',
     bg: '4c575f',
+    textColor: '#fff',
   },
 ];
 
