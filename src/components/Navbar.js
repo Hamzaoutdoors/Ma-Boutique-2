@@ -39,12 +39,28 @@ const Input = styled.input`
 
 const Center = styled.div`
     flex: 1;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+const LogoContainer = styled.div`
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `;
 
-const Logo = styled.h1`
-    font-size: 30px;
-    font-weight: bold;
+const TextLogo = styled.h1`
+    font-size: 20px;
+    font-weight: bold;    
+    `;
+
+const ImageLogo = styled.img`
+    width: 10%;
+    height: auto;
+    margin-left: 10px;
+    object-fit: cover;
 `;
 
 const Right = styled.div`
@@ -71,9 +87,10 @@ const Navbar = () => (
         </SearchContainer>
       </Left>
       <Center>
-        <Logo>
-          Ma Boutique
-        </Logo>
+        <LogoContainer>
+          <TextLogo>Ma Boutique</TextLogo>
+          <ImageLogo src="./assets/logo.png" />
+        </LogoContainer>
       </Center>
       <Right>
         <MenuItem>REGISTER</MenuItem>
