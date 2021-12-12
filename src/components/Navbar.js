@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Search, ShoppingCartOutlined } from '@material-ui/icons';
 import { Badge } from '@material-ui/core';
+import { NavLink } from 'react-router-dom';
 import { mobile } from '../responsive';
 
 const Container = styled.div`
@@ -37,7 +38,6 @@ const SearchContainer = styled.div`
    margin-left: 25px;
    padding: 5px;
    ${mobile({ margin: '0 12px' })}
-
 `;
 
 const Input = styled.input`
@@ -59,12 +59,17 @@ const LogoContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: rgba(0, 0, 250, 0.1);
     ${mobile({ width: '100%' })}
 `;
 
 const TextLogo = styled.h1`
-    font-size: 20px;
+    font-size: 1.5rem;
     font-weight: bold; 
+    text-decoration: none;
+    text-shadow: 1px 1px 1px #000;
     ${mobile({ fontSize: '13px', marginLeft: '5px' })}   
     `;
 
@@ -86,8 +91,11 @@ const Right = styled.div`
 
 const MenuItem = styled.div`
     font-size: 14px;
+    font-weight: 500;
     cursor: pointer;
     margin-left: 25px;
+    text-decoration: underline;
+    color: black;
     ${mobile({ fontSize: '11px', marginLeft: '8px' })}
 `;
 
@@ -102,16 +110,16 @@ const Navbar = () => (
         </SearchContainer>
       </Left>
       <Center>
-        <LogoContainer>
+        <LogoContainer as={NavLink} to="/" exact>
           <TextLogo>Ma Boutique</TextLogo>
           <ImageLogo src="./assets/logo.png" />
         </LogoContainer>
       </Center>
       <Right>
-        <MenuItem>REGISTER</MenuItem>
-        <MenuItem>SIGN IN</MenuItem>
-        <MenuItem>
-          <Badge badgeContent={4} color="primary">
+        <MenuItem as={NavLink} to="/register" exact>REGISTER</MenuItem>
+        <MenuItem as={NavLink} to="/login" exact>SIGN IN</MenuItem>
+        <MenuItem as={NavLink} to="/cart" exact>
+          <Badge badgeContent={2} color="primary">
             <ShoppingCartOutlined />
           </Badge>
         </MenuItem>
