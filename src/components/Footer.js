@@ -1,22 +1,34 @@
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-unescaped-entities */
 import {
   Facebook, Instagram, MailOutline, Phone, Pinterest, Room, Twitter,
 } from '@material-ui/icons';
 import styled from 'styled-components';
+import { mobile } from '../responsive';
 
 const Container = styled.div`
    display: flex;
    justify-content: center;
+   background-color: ${(props) => props.color};
+   ${mobile({
+    flexDirection: 'column',
+  })};
 `;
 const Left = styled.div`
    flex: 1;
    display: flex;
    flex-direction: column;
    padding: 20px;
+   ${mobile({
+    margin: '10px 10px 30px 10px',
+  })};
 `;
 
 const Logo = styled.h1`
    font-size: 2rem;
+   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+   letter-spacing: 0.2rem;
 `;
 const Desc = styled.p`
    margin: 20px 0;
@@ -42,7 +54,10 @@ const Center = styled.div`
    flex: 1;
    padding: 20px;
    margin-left: 40px;
-`;
+   ${mobile({
+    display: 'none',
+  })};
+  `;
 
 const Title = styled.h3`
    margin-bottom: 30px;
@@ -65,6 +80,9 @@ const ListItem = styled.li`
 const Right = styled.div`
   flex: 1;
   padding: 20px;
+  ${mobile({
+    backgroundColor: '#fff8f8',
+  })};
 `;
 
 const ContactItem = styled.div`
@@ -77,8 +95,8 @@ const Payment = styled.img`
    width: 50%;
 `;
 
-const Footer = () => (
-  <Container>
+const Footer = (props) => (
+  <Container color={props.color}>
     <Left>
       <Logo>Ma Boutique</Logo>
       <Desc>

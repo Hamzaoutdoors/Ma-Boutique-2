@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar';
 import Newsletter from '../components/Newsletter';
 import Products from '../components/Products';
 import { OptionsProducts, OptionsSize } from '../options';
+import { mobile } from '../responsive';
 
 const Container = styled.div``;
 
@@ -21,11 +22,18 @@ const FilterContainer = styled.div`
 
 const Filter = styled.div`
    margin: 20px;
+   ${mobile({
+    margin: '0 20px', display: 'flex', flexDirection: 'column',
+  })};
 `;
 
 const FilterText = styled.span`
-   font-size: 20px;
+    font-size: 20px;
     font-weight: 600;
+    margin-right: 20px;
+    ${mobile({
+    marginRight: '0',
+  })};  
 `;
 
 const Select = styled.select`
@@ -33,6 +41,9 @@ const Select = styled.select`
     margin-right: 10px;
     width: 120px;
     height: 40px;
+    ${mobile({
+    margin: '10px 0',
+  })}; 
 `;
 const Option = styled.option``;
 
