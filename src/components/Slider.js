@@ -2,6 +2,7 @@ import { ArrowLeftOutlined, ArrowRightOutlined } from '@material-ui/icons';
 import { useState } from 'react';
 import styled from 'styled-components';
 import { sliderItems } from '../data';
+import { mobile } from '../responsive';
 
 const Container = styled.div`
     width: 100%;   
@@ -9,6 +10,8 @@ const Container = styled.div`
     display: flex;
     position: relative;
     overflow-x: hidden;
+    ${mobile({ display: 'none' })}
+
 `;
 
 const Arrow = styled.div`
@@ -28,6 +31,11 @@ const Arrow = styled.div`
     cursor: pointer;
     opacity: 0.5;
     z-index: 2;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        opacity: 1;
+        transform: translateX(${(props) => (props.direction === 'left' ? '-2px' : '2px')});
+    }
 `;
 
 const Wrapper = styled.div`
@@ -94,7 +102,7 @@ const Slider = () => {
   return (
     <Container>
       <Arrow direction="left" onClick={() => handleClick('left')}>
-        <ArrowLeftOutlined />
+        <ArrowLeftOutlined style={{ fontSize: '3rem' }} />
       </Arrow>
       <Wrapper slideIndex={slideIndex}>
         {sliderItems.map((item) => (
@@ -111,7 +119,7 @@ const Slider = () => {
         ))}
       </Wrapper>
       <Arrow direction="right" onClick={() => handleClick('right')}>
-        <ArrowRightOutlined />
+        <ArrowRightOutlined style={{ fontSize: '3rem' }} />
       </Arrow>
     </Container>
   );
