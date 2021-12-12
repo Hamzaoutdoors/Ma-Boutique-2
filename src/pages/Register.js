@@ -13,7 +13,7 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
   padding: 20px;
-  width: 30%;
+  width: 40%;
   background: white;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
@@ -38,15 +38,18 @@ const Form = styled.form`
 
 const Input = styled.input`
   flex: 1;
-  min-width: 300px;
+  min-width: 80%;
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
   font-size: 16px;
   font-weight: 300;
-  ${mobile({ minWidth: '75%' })};
-`;
+  &:focus {
+    outline: none;
+    border: 1px solid #000;
+    }
+  `;
 
 const Aggrement = styled.p`
   font-size: 12px;

@@ -37,7 +37,7 @@ const Desc = styled.p`
 const SocialContainer = styled.div`
    display: flex;
 `;
-const SocialIcon = styled.div`
+const SocialIcon = styled.a`
    width: 40px;
    height: 40px;
    border-radius: 50%;
@@ -110,10 +110,10 @@ const Footer = (props) => (
         embarrassing hidden in the middle of text.
       </Desc>
       <SocialContainer>
-        <SocialIcon color="3b5999">
+        <SocialIcon color="3b5999" href="https://web.facebook.com/profile.php?id=100008420561138&_rdc=1&_rdr" target="_blank">
           <Facebook />
         </SocialIcon>
-        <SocialIcon color="e4405f">
+        <SocialIcon color="e4405f" href="https://www.instagram.com/hamzaoutdoors/?hl=fr">
           <Instagram />
         </SocialIcon>
         <SocialIcon color="55acee">
